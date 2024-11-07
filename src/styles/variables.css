@@ -1,0 +1,17 @@
+:root {
+  /* Colors */
+  --color-primary: #1DA1F2;
+  --color-secondary: #1A1A1A;
+  --color-accent: #0D8BD9;
+  --color-background: #FFFFFF;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #666666;
+  --color-text-light: #FFFFFF;
+
+  /* Fonts */
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Other variables... */
+} 
