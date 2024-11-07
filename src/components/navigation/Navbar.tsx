@@ -168,18 +168,15 @@ const Navbar = ({ refs }: NavbarProps) => {
                 
                 <DropdownMenuItem
                   onClick={() => setTheme(isDark ? 'light' : 'dark')}
-                  className={`flex items-center gap-2 ${
+                  className={`flex items-center justify-between ${
                     isDark ? 'hover:bg-slate-700' : 'hover:bg-gray-100'
                   }`}
                 >
-                  {isDark ? (
-                    <Sun size={16} />
-                  ) : (
-                    <Moon size={16} />
-                  )}
-                  <span>
+                  <span className="flex items-center gap-2">
+                    {isDark ? <Sun size={16} /> : <Moon size={16} />}
                     {isDark ? 'Light Mode' : 'Dark Mode'}
                   </span>
+                  {isDark ? '✓' : ''}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -238,6 +235,25 @@ const Navbar = ({ refs }: NavbarProps) => {
                     </Button>
                   ))}
                 </div>
+              </div>
+
+              <div className="px-4 py-2">
+                <Button
+                  variant={isDark ? "default" : "ghost"}
+                  onClick={() => setTheme(isDark ? 'light' : 'dark')}
+                  size="sm"
+                  className={`flex items-center justify-between ${
+                    isDark 
+                        ? 'bg-indigo-500 text-white hover:bg-indigo-600' 
+                        : 'bg-transparent hover:bg-gray-100'
+                  }`}
+                >
+                  <span className="flex items-center gap-2">
+                    {isDark ? <Sun size={16} /> : <Moon size={16} />}
+                    {isDark ? 'Light Mode' : 'Dark Mode'}
+                  </span>
+                  {isDark ? '✓' : ''}
+                </Button>
               </div>
 
               <Button 
