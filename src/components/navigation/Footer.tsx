@@ -1,6 +1,6 @@
 import { useLanguage } from '../../context/LanguageContext'
 import { useTheme } from '../../providers/ThemeProvider'
-import theme from '../../config/theme'
+
 import Logo from '../logo/Logo'
 
 const Footer = () => {
