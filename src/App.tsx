@@ -1,4 +1,6 @@
 import { useRef } from 'react'
+import { LanguageProvider, useLanguage } from './context/LanguageContext'
+import { ThemeProvider } from './providers/ThemeProvider'
 import Navbar from './components/navigation/Navbar'
 import Hero from './components/sections/Hero'
 import About from './components/sections/About'
@@ -10,7 +12,8 @@ import Contact from './components/sections/Contact'
 import Footer from './components/navigation/Footer'
 import theme from './config/theme'
 
-function App() {
+function AppContent() {
+  const { dir } = useLanguage()
   const homeRef = useRef<HTMLDivElement>(null)
   const aboutRef = useRef<HTMLDivElement>(null)
   const servicesRef = useRef<HTMLDivElement>(null)
@@ -20,7 +23,13 @@ function App() {
   const contactRef = useRef<HTMLDivElement>(null)
 
   return (
-    <div style={{ fontFamily: theme.fonts.primary }}>
+    <div 
+      style={{ 
+        fontFamily: theme.fonts.primary,
+        direction: dir,
+      }}
+      className={`min-h-screen w-full ${dir === 'rtl' ? 'rtl' : 'ltr'}`}
+    >
       <Navbar 
         refs={{
           home: homeRef,
@@ -33,32 +42,42 @@ function App() {
         }}
       />
       
-      <main>
-        <div ref={homeRef}>
+      <main className="flex flex-col items-center w-full">
+        <div ref={homeRef} className="w-full">
           <Hero />
         </div>
-        <div ref={aboutRef}>
+        <div ref={aboutRef} className="w-full">
           <About />
         </div>
-        <div ref={servicesRef}>
+        <div ref={servicesRef} className="w-full">
           <Services />
         </div>
-        <div ref={approachRef}>
+        <div ref={approachRef} className="w-full">
           <Approach />
         </div>
-        <div ref={caseStudiesRef}>
+        <div ref={caseStudiesRef} className="w-full">
           <CaseStudies />
         </div>
-        <div ref={resourcesRef}>
+        <div ref={resourcesRef} className="w-full">
           <Resources />
         </div>
-        <div ref={contactRef}>
+        <div ref={contactRef} className="w-full">
           <Contact />
         </div>
       </main>
 
       <Footer />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </ThemeProvider>
   )
 }
 

@@ -1,32 +1,65 @@
+import { useLanguage } from '../../context/LanguageContext'
+import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
 import Logo from '../logo/Logo'
 
 const Footer = () => {
+  const { t, dir } = useLanguage()
+  const { theme: currentTheme } = useTheme()
+  const isDark = currentTheme === 'dark'
   const currentYear = new Date().getFullYear()
 
+  const socialLinks = [
+    { name: 'LinkedIn', icon: '🔗', url: '#' },
+    { name: 'Twitter', icon: '🐦', url: '#' },
+    { name: 'GitHub', icon: '💻', url: '#' }
+  ]
+
+  const quickLinks = [
+    { name: t.nav.about, href: '#about' },
+    { name: t.nav.services, href: '#services' },
+    { name: t.nav.caseStudies, href: '#case-studies' },
+    { name: t.nav.contact, href: '#contact' }
+  ]
+
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer 
+      className={`py-12 ${
+        isDark ? 'bg-slate-900' : 'bg-gray-900'
+      }`}
+      dir={dir}
+    >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <Logo />
-            <p className="mt-4 text-gray-400">
-              Empowering businesses through innovative technology solutions.
+            <p className={`mt-4 ${
+              isDark ? 'text-gray-400' : 'text-gray-400'
+            }`}>
+              {t.footer.description}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <h3 className={`text-lg font-bold mb-4 ${
+              isDark ? 'text-gray-100' : 'text-white'
+            }`}>
+              {t.footer.quickLinks}
+            </h3>
             <ul className="space-y-2">
-              {['About', 'Services', 'Case Studies', 'Contact'].map((link) => (
-                <li key={link}>
+              {quickLinks.map((link) => (
+                <li key={link.name}>
                   <a 
-                    href={`#${link.toLowerCase()}`}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    href={link.href}
+                    className={`${
+                      isDark 
+                        ? 'text-gray-400 hover:text-indigo-400' 
+                        : 'text-gray-400 hover:text-white'
+                    } transition-colors`}
                   >
-                    {link}
+                    {link.name}
                   </a>
                 </li>
               ))}
@@ -35,15 +68,24 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Connect</h3>
+            <h3 className={`text-lg font-bold mb-4 ${
+              isDark ? 'text-gray-100' : 'text-white'
+            }`}>
+              {t.footer.connect}
+            </h3>
             <div className="flex space-x-4">
-              {['LinkedIn', 'Twitter', 'GitHub'].map((social) => (
+              {socialLinks.map((social) => (
                 <a 
-                  key={social}
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  key={social.name}
+                  href={social.url}
+                  className={`${
+                    isDark 
+                      ? 'text-gray-400 hover:text-indigo-400' 
+                      : 'text-gray-400 hover:text-white'
+                  } transition-colors`}
+                  title={social.name}
                 >
-                  {social}
+                  <span className="text-2xl">{social.icon}</span>
                 </a>
               ))}
             </div>
@@ -51,12 +93,16 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} OxDev. All rights reserved.</p>
+        <div className={`border-t ${
+          isDark ? 'border-gray-800' : 'border-gray-800'
+        } pt-8 mt-8 text-center`}>
+          <p className={isDark ? 'text-gray-400' : 'text-gray-400'}>
+            {t.footer.copyright.replace('{year}', currentYear.toString())}
+          </p>
         </div>
       </div>
     </footer>
   )
 }
 
-export default Footer 
+export default Footer

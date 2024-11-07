@@ -1,57 +1,144 @@
+import { useLanguage } from '../../context/LanguageContext'
+import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
 
-const Resources = () => {
-  const resources = [
-    {
-      title: "Industry Insights",
-      description: "Latest trends and analysis in technology",
-      icon: "📊",
-      link: "#"
-    },
-    {
-      title: "Technical Guides",
-      description: "In-depth tutorials and best practices",
-      icon: "📚",
-      link: "#"
-    },
-    {
-      title: "Case Studies",
-      description: "Real-world implementation stories",
-      icon: "📋",
-      link: "#"
-    }
-  ]
+const ResourceCard = ({ 
+  title, 
+  description, 
+  type, 
+  icon,
+  link 
+}: {
+  title: string;
+  description: string;
+  type: string;
+  icon: string;
+  link: string;
+}) => {
+  const { theme: currentTheme } = useTheme()
+  const isDark = currentTheme === 'dark'
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 
-          className="text-3xl md:text-4xl font-bold mb-16 text-center"
-          style={{ fontFamily: theme.fonts.secondary }}
+    <a 
+      href={link}
+      className={`block p-6 rounded-lg hover:transform hover:-translate-y-1 
+                  transition-all duration-300 group ${
+        isDark 
+          ? 'bg-slate-800 hover:shadow-lg hover:shadow-slate-700/50' 
+          : 'bg-white hover:shadow-lg hover:shadow-gray-200/50'
+      }`}
+    >
+      <div className="flex items-start space-x-4">
+        <div 
+          className="text-3xl group-hover:scale-110 transition-transform duration-300"
         >
-          Resources
-        </h2>
+          {icon}
+        </div>
+        <div>
+          <div className={`text-sm mb-1 ${
+            isDark ? 'text-indigo-400' : 'text-primary'
+          }`}>
+            {type}
+          </div>
+          <h3 className={`text-xl font-bold mb-2 ${
+            isDark ? 'text-gray-100' : 'text-gray-900'
+          }`}>
+            {title}
+          </h3>
+          <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>
+            {description}
+          </p>
+        </div>
+      </div>
+    </a>
+  )
+}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {resources.map((resource, index) => (
-            <a 
-              key={index}
-              href={resource.link}
-              className="block p-6 rounded-lg hover:-translate-y-1 transition-all"
-              style={{ 
-                backgroundColor: theme.colors.background,
-                boxShadow: theme.shadows.md
-              }}
-            >
-              <div className="text-4xl mb-4">{resource.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{resource.title}</h3>
-              <p className="text-gray-600">{resource.description}</p>
-            </a>
+const Resources = () => {
+  const { t, dir } = useLanguage()
+  const { theme: currentTheme } = useTheme()
+  const isDark = currentTheme === 'dark'
+
+  return (
+    <section className={`py-20 relative ${
+      isDark ? 'bg-slate-900' : 'bg-white'
+    }`} dir={dir}>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className={`absolute inset-0 opacity-5 ${
+          isDark ? 'bg-gradient-to-br from-indigo-500/10 to-transparent' : ''
+        }`} />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <h2 
+            className={`text-3xl md:text-4xl font-bold mb-6 ${
+              isDark ? 'text-gray-100' : 'text-gray-900'
+            }`}
+            style={{ fontFamily: theme.fonts.secondary }}
+          >
+            {t.resources.title}
+          </h2>
+          <p className={`text-lg max-w-3xl mx-auto ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {t.resources.subtitle}
+          </p>
+        </div>
+
+        {/* Resource Categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {t.resources.categories.map((category, index) => (
+            <ResourceCard key={index} {...category} />
           ))}
         </div>
+
+        {/* FAQ Section */}
+        <div className="max-w-3xl mx-auto">
+          <h3 
+            className={`text-2xl font-bold mb-8 text-center ${
+              isDark ? 'text-gray-100' : 'text-gray-900'
+            }`}
+            style={{ fontFamily: theme.fonts.secondary }}
+          >
+            {t.resources.faq.title}
+          </h3>
+          <div className="space-y-4">
+            {t.resources.faq.questions.map((faq, index) => (
+              <div 
+                key={index}
+                className={`p-6 rounded-lg transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-slate-800 hover:shadow-lg hover:shadow-slate-700/50' 
+                    : 'bg-white hover:shadow-lg hover:shadow-gray-200/50'
+                }`}
+                style={{ 
+                  boxShadow: isDark ? theme.shadows.dark.sm : theme.shadows.light.sm
+                }}
+              >
+                <h4 className={`font-bold mb-2 ${
+                  isDark ? 'text-gray-100' : 'text-gray-900'
+                }`}>
+                  {faq.question}
+                </h4>
+                <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className={`mt-16 h-px w-full ${
+          isDark 
+            ? 'bg-gradient-to-r from-transparent via-slate-700 to-transparent'
+            : 'bg-gradient-to-r from-transparent via-gray-200 to-transparent'
+        }`} />
       </div>
     </section>
   )
 }
 
-export default Resources 
+export default Resources
