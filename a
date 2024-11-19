@@ -1,0 +1,41 @@
+[33mcommit 5a964ac47fb57b5159cd1c4229d0432a9483d7ec[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: [aymane jebbar] <[aymane.jebbar@gmail.com]>
+Date:   Tue Nov 12 14:32:26 2024 +0100
+
+    run dev and fix config for white screen
+
+[33mcommit 3ab2d1b8edae5480853c936c8be8ed9b003a200e[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: [aymane jebbar] <[aymane.jebbar@gmail.com]>
+Date:   Thu Nov 7 20:13:50 2024 +0100
+
+    [fixed theme button on mobile version]
+
+[33mcommit 352c67fbb5d77c62263918c2a6cdd7d868bdf656[m
+Author: [aymane jebbar] <[aymane.jebbar@gmail.com]>
+Date:   Thu Nov 7 16:12:43 2024 +0100
+
+    [tsconfig change]
+
+[33mcommit 3725368256443d43a583adad6c4359330d9cfe03[m
+Author: [aymane jebbar] <[aymane.jebbar@gmail.com]>
+Date:   Thu Nov 7 16:10:33 2024 +0100
+
+    [removed unused pages]
+
+[33mcommit cbe541db4ee0457c9720d88e71145daf028215dc[m
+Author: [aymane jebbar] <[aymane.jebbar@gmail.com]>
+Date:   Thu Nov 7 16:08:07 2024 +0100
+
+    [removed unused imports]
+
+[33mcommit bcb60d32a378aaf421ae9b513dde00cc954cf5ed[m
+Author: [aymane jebbar] <[aymane.jebbar@gmail.com]>
+Date:   Thu Nov 7 15:59:43 2024 +0100
+
+    [added language and theme]
+
+[33mcommit 7f65f84086ed17ac1ad401643b5c26aef4c9965c[m
+Author: [aymane jebbar] <[aymane.jebbar@gmail.com]>
+Date:   Thu Nov 7 10:44:18 2024 +0100
+
+    [Commit 1]

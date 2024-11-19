@@ -9,18 +9,23 @@ const About = () => {
 
   const values = [
     {
-      title: t.about.values.innovation.title,
-      description: t.about.values.innovation.description,
+      title: t.about.values.expertise.title,
+      description: t.about.values.expertise.description,
       icon: "🚀"
     },
     {
-      title: t.about.values.excellence.title,
-      description: t.about.values.excellence.description,
+      title: t.about.values.personalization.title,
+      description: t.about.values.personalization.description,
       icon: "⭐"
     },
     {
-      title: t.about.values.collaboration.title,
-      description: t.about.values.collaboration.description,
+      title: t.about.values.innovation.title,
+      description: t.about.values.innovation.description,
+      icon: "🤝"
+    },
+    {
+      title: t.about.values.customer.title,
+      description: t.about.values.customer.description,
       icon: "🤝"
     }
   ]
@@ -49,7 +54,7 @@ const About = () => {
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
           {values.map((value, index) => (
             <div 
               key={index}

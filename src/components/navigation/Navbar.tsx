@@ -17,8 +17,8 @@ interface NavbarProps {
     home: RefObject<HTMLDivElement>
     about: RefObject<HTMLDivElement>
     services: RefObject<HTMLDivElement>
-    approach: RefObject<HTMLDivElement>
     caseStudies: RefObject<HTMLDivElement>
+    approach: RefObject<HTMLDivElement>
     resources: RefObject<HTMLDivElement>
     contact: RefObject<HTMLDivElement>
   }

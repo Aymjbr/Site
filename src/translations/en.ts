@@ -10,26 +10,31 @@ export const en = {
     getStarted: "Get Started"
   },
   hero: {
-    title: "Innovating Tomorrow's Solutions",
-    subtitle: "OxDev specializes in cutting-edge software development, data analysis, artificial intelligence, and process optimization solutions that drive your business forward.",
+    title: "Welcome to OxDev",
+    subtitle: "Turn your challenges into innovative solutions.",
+    description: "At OxDev, we leverage our expertise to ensure your success. Specializing in software development, data analysis, artificial intelligence, and process optimization, we are dedicated to creating tailor-made solutions that perfectly meet the specific needs of your business. With our client-centric approach, we guide you through the ever-evolving technological landscape, enabling you to achieve your goals efficiently and innovatively.",
     getStarted: "Get Started",
     learnMore: "Learn More"
   },
   about: {
-    title: "About OxDev",
-    description: "Founded in 2024, OxDev is a technology company based in Rabat, Morocco, dedicated to empowering businesses through innovative technology solutions.",
+    title: "Why Choose OxDev ?",
+    description: "Our Commitment to Your Success",
     values: {
+      expertise: {
+        title: "Expertise",
+        description: "A team of passionate and experienced experts."
+      },
+      personalization: {
+        title: "Personalization",
+        description: "Solutions tailored to your specific needs."
+      },
       innovation: {
         title: "Innovation",
-        description: "Pushing boundaries with cutting-edge solutions"
+        description: "Integrating the latest technologies for optimal results."
       },
-      excellence: {
-        title: "Excellence",
-        description: "Delivering quality in every project"
-      },
-      collaboration: {
-        title: "Collaboration",
-        description: "Working closely with clients for optimal results"
+      customer: {
+        title: "Customer Satisfaction",
+        description: "Continuous support and responsive service."
       }
     },
     mission: {
@@ -45,7 +50,8 @@ export const en = {
   },
   services: {
     title: "Our Services",
-    subtitle: "Comprehensive technology solutions tailored to your business needs",
+    subtitle: "What We Do",
+    description: "Discover our range of services designed to propel your business into the future : ",
     software: {
       title: "Software Development",
       description: "Custom software solutions tailored to your business needs",
@@ -68,7 +74,7 @@ export const en = {
     },
     ai: {
       title: "Artificial Intelligence",
-      description: "Smart solutions powered by machine learning",
+      description: "Automate and innovate with our AI solutions.",
       features: [
         "Machine Learning Models",
         "Natural Language Processing",
@@ -78,7 +84,7 @@ export const en = {
     },
     optimization: {
       title: "Process Optimization",
-      description: "Streamline operations for maximum efficiency",
+      description: "Accelerate your operational efficiency.",
       features: [
         "Workflow Automation",
         "Resource Optimization",

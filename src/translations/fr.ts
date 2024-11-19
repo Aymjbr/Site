@@ -10,26 +10,31 @@ export const fr = {
     getStarted: "Commencer"
   },
   hero: {
-    title: "Innover les Solutions de Demain",
-    subtitle: "OxDev est spécialisé dans le développement de logiciels de pointe, l'analyse de données, l'intelligence artificielle et les solutions d'optimisation des processus qui font progresser votre entreprise.",
+    title: "Bienvenue chez OxDev",
+    description: "Transformez vos défis en solutions innovantes.",
+    subtitle: "Chez OxDev, nous mettons notre expertise au service de votre succès. Spécialisés dans le développement informatique, l'analyse de données, l'intelligence artificielle et l'optimisation des processus, nous nous engageons à créer des solutions sur mesure qui répondent parfaitement aux besoins spécifiques de votre entreprise. Grâce à notre approche centrée sur le client, nous vous guidons à travers le paysage technologique en constante évolution, vous permettant ainsi d’atteindre vos objectifs avec efficacité et innovation.",
     getStarted: "Commencer",
     learnMore: "En Savoir Plus"
   },
   about: {
-    title: "À Propos d'OxDev",
-    description: "Fondée en 2024, OxDev est une entreprise technologique basée à Rabat, Maroc, dédiée à l'autonomisation des entreprises grâce à des solutions technologiques innovantes.",
+    title: "Pourquoi choisir OxDev ?",
+    description: "Notre engagement envers votre succès.",
     values: {
+      expertise : {
+        title: "Expertise",
+        description: "Une équipe d'experts passionnés et expérimentés."
+      },
+      personnalisation : {
+        title: "Personnalisation",
+        description: "Des solutions adaptées à vos besoins spécifiques."
+      },
       innovation: {
         title: "Innovation",
-        description: "Repousser les limites avec des solutions de pointe"
+        description: "Intégration des dernières technologies pour des résultats optimaux."
       },
-      excellence: {
-        title: "Excellence",
-        description: "Fournir de la qualité dans chaque projet"
-      },
-      collaboration: {
-        title: "Collaboration",
-        description: "Travailler en étroite collaboration avec les clients"
+      customer: {
+        title: "Satisfaction client",
+        description: "Un suivi constant et un support réactif."
       }
     },
     mission: {
@@ -45,9 +50,10 @@ export const fr = {
   },
   services: {
     title: "Nos Services",
-    subtitle: "Des solutions technologiques complètes adaptées aux besoins de votre entreprise",
+    subtitle: "Ce que nous faisons",
+    decription:"Découvrez notre gamme de services conçus pour propulser votre entreprise vers l'avenir :",
     software: {
-      title: "Développement Logiciel",
+      title: "Développement informatique",
       description: "Solutions logicielles personnalisées adaptées à vos besoins",
       features: [
         "Applications Web Sur Mesure",
@@ -57,7 +63,7 @@ export const fr = {
       ]
     },
     data: {
-      title: "Analyse de Données",
+      title: "Analyse de données",
       description: "Transformez vos données en insights actionnables",
       features: [
         "Business Intelligence",
@@ -68,7 +74,7 @@ export const fr = {
     },
     ai: {
       title: "Intelligence Artificielle",
-      description: "Solutions intelligentes basées sur le machine learning",
+      description: "Automatisez et innovez avec nos solutions IA.",
       features: [
         "Modèles de Machine Learning",
         "Traitement du Langage Naturel",
@@ -78,7 +84,7 @@ export const fr = {
     },
     optimization: {
       title: "Optimisation des Processus",
-      description: "Rationalisez les opérations pour une efficacité maximale",
+      description: "Accélérez votre efficacité opérationnelle.",
       features: [
         "Automatisation des Flux",
         "Optimisation des Ressources",

@@ -15,8 +15,8 @@ import theme from './config/theme'
 function AppContent() {
   const { dir } = useLanguage()
   const homeRef = useRef<HTMLDivElement>(null)
-  const aboutRef = useRef<HTMLDivElement>(null)
   const servicesRef = useRef<HTMLDivElement>(null)
+  const aboutRef = useRef<HTMLDivElement>(null)
   const approachRef = useRef<HTMLDivElement>(null)
   const caseStudiesRef = useRef<HTMLDivElement>(null)
   const resourcesRef = useRef<HTMLDivElement>(null)
@@ -33,10 +33,10 @@ function AppContent() {
       <Navbar 
         refs={{
           home: homeRef,
-          about: aboutRef,
           services: servicesRef,
-          approach: approachRef,
+          about: aboutRef,
           caseStudies: caseStudiesRef,
+          approach: approachRef,
           resources: resourcesRef,
           contact: contactRef
         }}
@@ -46,17 +46,17 @@ function AppContent() {
         <div ref={homeRef} className="w-full">
           <Hero />
         </div>
-        <div ref={aboutRef} className="w-full">
-          <About />
-        </div>
         <div ref={servicesRef} className="w-full">
           <Services />
         </div>
-        <div ref={approachRef} className="w-full">
-          <Approach />
+        <div ref={aboutRef} className="w-full">
+          <About />
         </div>
         <div ref={caseStudiesRef} className="w-full">
           <CaseStudies />
+        </div>
+        <div ref={approachRef} className="w-full">
+          <Approach />
         </div>
         <div ref={resourcesRef} className="w-full">
           <Resources />

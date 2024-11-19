@@ -30,6 +30,12 @@ const Hero = () => {
         >
           {t.hero.subtitle}
         </p>
+        <p 
+          className="text-ml md:text-xl mb-8 max-w-2xl mx-auto text-white/90"
+          style={{ fontFamily: theme.fonts.primary }}
+        >
+          {t.hero.description}
+        </p>
         <div className="flex justify-center gap-4">
           <button className="hero-button-primary">
             {t.hero.getStarted}
