@@ -2,6 +2,10 @@ import { useLanguage } from '../../context/LanguageContext'
 import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
 
+// Import testimonial images
+import testimonial1 from '../../assets/images/testimonial-1.jpg'
+import testimonial2 from '../../assets/images/testimonial-2.jpg'
+
 const TestimonialCard = ({ 
   quote, 
   author, 
@@ -69,6 +73,9 @@ const Testimonials = () => {
   const { theme: currentTheme } = useTheme()
   const isDark = currentTheme === 'dark'
 
+  // Array of testimonial images
+  const testimonialImages = [testimonial1, testimonial2]
+
   return (
     <section className={`py-20 ${
       isDark ? 'bg-slate-900' : 'bg-white'
@@ -90,7 +97,7 @@ const Testimonials = () => {
             <TestimonialCard 
               key={index}
               {...testimonial}
-              image={`/images/testimonial-${index + 1}.jpg`}
+              image={testimonialImages[index]}
             />
           ))}
         </div>

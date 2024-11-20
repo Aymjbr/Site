@@ -3,6 +3,11 @@ import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
 import { Button } from '../ui/button'
 
+// Import blog post images
+import blogPost1 from '../../assets/images/blog-1.jpg'
+import blogPost2 from '../../assets/images/blog-2.jpg'
+import blogPost3 from '../../assets/images/blog-3.jpg'
+
 const BlogCard = ({ 
   title, 
   excerpt, 
@@ -59,8 +64,12 @@ const BlogCard = ({
           {excerpt}
         </p>
         <Button 
-          variant="link" 
-          className={isDark ? 'text-indigo-400' : 'text-primary'}
+          variant="outline"
+          className={`${
+            isDark 
+              ? 'border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white' 
+              : 'border-primary text-primary hover:bg-primary hover:text-white'
+          }`}
         >
           {readMoreText} →
         </Button>
@@ -73,6 +82,9 @@ const Blog = () => {
   const { t, dir } = useLanguage()
   const { theme: currentTheme } = useTheme()
   const isDark = currentTheme === 'dark'
+
+  // Array of blog post images
+  const blogImages = [blogPost1, blogPost2, blogPost3]
 
   return (
     <section className={`py-20 ${
@@ -100,7 +112,7 @@ const Blog = () => {
             <BlogCard 
               key={index}
               {...post}
-              image={`/images/blog-${index + 1}.jpg`}
+              image={blogImages[index]}
               readMoreText={t.blog.readMore}
             />
           ))}
@@ -110,7 +122,7 @@ const Blog = () => {
           <Button 
             variant="outline"
             size="lg"
-            className={`${
+            className={`px-8 py-2 ${
               isDark 
                 ? 'border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white' 
                 : 'border-primary text-primary hover:bg-primary hover:text-white'

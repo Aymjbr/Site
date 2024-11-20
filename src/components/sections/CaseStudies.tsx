@@ -2,6 +2,11 @@ import { useLanguage } from '../../context/LanguageContext'
 import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
 
+// Import case study images
+import caseStudy1 from '../../assets/images/case-study-1.jpg'
+import caseStudy2 from '../../assets/images/case-study-2.jpg'
+import caseStudy3 from '../../assets/images/case-study-3.jpg'
+
 const CaseStudyCard = ({ 
   title, 
   description, 
@@ -75,6 +80,9 @@ const CaseStudies = () => {
   const { theme: currentTheme } = useTheme()
   const isDark = currentTheme === 'dark'
 
+  // Array of case study images
+  const caseStudyImages = [caseStudy1, caseStudy2, caseStudy3]
+
   return (
     <section className={`py-20 ${
       isDark ? 'bg-slate-900/50' : 'bg-gray-50'
@@ -101,7 +109,7 @@ const CaseStudies = () => {
             <CaseStudyCard 
               key={index}
               {...caseStudy}
-              image={`/images/case-study-${index}.jpg`}
+              image={caseStudyImages[index]}
             />
           ))}
         </div>
@@ -126,18 +134,6 @@ const CaseStudies = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Optional: Add a decorative pattern */}
-        <div className={`absolute inset-0 pointer-events-none ${
-          isDark ? 'opacity-5' : 'opacity-10'
-        }`}>
-          <div className="absolute inset-0" 
-               style={{
-                 backgroundImage: 'radial-gradient(circle at 50% 50%, currentColor 1px, transparent 1px)',
-                 backgroundSize: '30px 30px'
-               }}
-          />
         </div>
       </div>
     </section>
