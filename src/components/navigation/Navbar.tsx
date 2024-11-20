@@ -18,8 +18,8 @@ interface NavbarProps {
     about: RefObject<HTMLDivElement>
     services: RefObject<HTMLDivElement>
     caseStudies: RefObject<HTMLDivElement>
-    approach: RefObject<HTMLDivElement>
-    resources: RefObject<HTMLDivElement>
+    testimonials: RefObject<HTMLDivElement>
+    blog: RefObject<HTMLDivElement>
     contact: RefObject<HTMLDivElement>
   }
 }
@@ -51,7 +51,9 @@ const Navbar = ({ refs }: NavbarProps) => {
     approach: t.nav.approach,
     caseStudies: t.nav.caseStudies,
     resources: t.nav.resources,
-    contact: t.nav.contact
+    contact: t.nav.contact,
+    testimonials: t.nav.testimonials,
+    blog: t.nav.blog
   }
 
   return (

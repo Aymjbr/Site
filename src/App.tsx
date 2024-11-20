@@ -5,22 +5,22 @@ import Navbar from './components/navigation/Navbar'
 import Hero from './components/sections/Hero'
 import About from './components/sections/About'
 import Services from './components/sections/Services'
-import Approach from './components/sections/Approach'
 import CaseStudies from './components/sections/CaseStudies'
-import Resources from './components/sections/Resources'
 import Contact from './components/sections/Contact'
 import Footer from './components/navigation/Footer'
 import theme from './config/theme'
+import Testimonials from './components/sections/Testimonials'
+import Blog from './components/sections/Blog'
 
 function AppContent() {
   const { dir } = useLanguage()
   const homeRef = useRef<HTMLDivElement>(null)
   const servicesRef = useRef<HTMLDivElement>(null)
   const aboutRef = useRef<HTMLDivElement>(null)
-  const approachRef = useRef<HTMLDivElement>(null)
   const caseStudiesRef = useRef<HTMLDivElement>(null)
-  const resourcesRef = useRef<HTMLDivElement>(null)
   const contactRef = useRef<HTMLDivElement>(null)
+  const testimonialsRef = useRef<HTMLDivElement>(null)
+  const blogRef = useRef<HTMLDivElement>(null)
 
   return (
     <div 
@@ -36,9 +36,9 @@ function AppContent() {
           services: servicesRef,
           about: aboutRef,
           caseStudies: caseStudiesRef,
-          approach: approachRef,
-          resources: resourcesRef,
-          contact: contactRef
+          contact: contactRef,
+          testimonials: testimonialsRef,
+          blog: blogRef
         }}
       />
       
@@ -55,11 +55,11 @@ function AppContent() {
         <div ref={caseStudiesRef} className="w-full">
           <CaseStudies />
         </div>
-        <div ref={approachRef} className="w-full">
-          <Approach />
+        <div ref={testimonialsRef} className="w-full">
+          <Testimonials />
         </div>
-        <div ref={resourcesRef} className="w-full">
-          <Resources />
+        <div ref={blogRef} className="w-full">
+          <Blog />
         </div>
         <div ref={contactRef} className="w-full">
           <Contact />

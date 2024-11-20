@@ -101,7 +101,7 @@ const CaseStudies = () => {
             <CaseStudyCard 
               key={index}
               {...caseStudy}
-              image={`/images/case-study-${index + 1}.jpg`}
+              image={`/images/case-study-${index}.jpg`}
             />
           ))}
         </div>

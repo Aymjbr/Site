@@ -6,6 +6,8 @@ export const en = {
     approach: "Approach",
     caseStudies: "Case Studies",
     resources: "Resources",
+    testimonials: "Testimonials",
+    blog: "Blog",
     contact: "Contact",
     getStarted: "Get Started"
   },
@@ -233,7 +235,7 @@ export const en = {
     },
     details: [
       {
-        icon: "📍",
+        icon: "��",
         title: "Address",
         value: "Rabat, Morocco"
       },
@@ -256,5 +258,48 @@ export const en = {
         { icon: "📱", name: "Instagram", url: "#" }
       ]
     }
+  },
+  testimonials: {
+    title: "What Our Clients Say About Us",
+    items: [
+      {
+        quote: "OxDev has transformed the way we work. Their proactive approach and tailored solutions made all the difference.",
+        author: "Sarah Johnson",
+        position: "CTO",
+        company: "TechCorp"
+      },
+      {
+        quote: "A responsive team with impressive results. I highly recommend OxDev!",
+        author: "Michael Chen",
+        position: "CEO",
+        company: "InnovateTech"
+      }
+    ]
+  },
+  blog: {
+    title: "Stay Informed",
+    description: "Follow our blog for articles on technological trends, practical tips, and case studies. Stay updated and discover how to maximize your digital tools.",
+    readMore: "Read More",
+    visitBlog: "Visit Our Blog",
+    posts: [
+      {
+        title: "The Future of AI in Business",
+        excerpt: "Discover how artificial intelligence is reshaping business operations and decision-making processes.",
+        date: "March 15, 2024",
+        category: "Technology"
+      },
+      {
+        title: "Optimizing Cloud Infrastructure",
+        excerpt: "Learn best practices for managing and optimizing your cloud infrastructure for better performance.",
+        date: "March 10, 2024",
+        category: "Cloud"
+      },
+      {
+        title: "Data Security Best Practices",
+        excerpt: "Essential security measures to protect your business data in an increasingly digital world.",
+        date: "March 5, 2024",
+        category: "Security"
+      }
+    ]
   }
 } 

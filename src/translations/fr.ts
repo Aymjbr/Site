@@ -6,6 +6,8 @@ export const fr = {
     approach: "Approche",
     caseStudies: "Études de Cas",
     resources: "Ressources",
+    testimonials: "Témoignages",
+    blog: "Blog",
     contact: "Contact",
     getStarted: "Commencer"
   },
@@ -256,5 +258,48 @@ export const fr = {
         { icon: "📱", name: "Instagram", url: "#" }
       ]
     }
+  },
+  testimonials: {
+    title: "Ce que nos clients disent de nous",
+    items: [
+      {
+        quote: "OxDev a transformé notre façon de travailler. Leur approche proactive et leurs solutions sur mesure ont fait toute la différence.",
+        author: "Sarah Johnson",
+        position: "Directrice Technique",
+        company: "TechCorp"
+      },
+      {
+        quote: "Une équipe réactive avec des résultats impressionnants. Je recommande vivement OxDev !",
+        author: "Michael Chen",
+        position: "PDG",
+        company: "InnovateTech"
+      }
+    ]
+  },
+  blog: {
+    title: "Restez Informé",
+    description: "Suivez notre blog pour des articles sur les tendances technologiques, des conseils pratiques et des études de cas. Restez à jour et découvrez comment maximiser vos outils numériques.",
+    readMore: "Lire la Suite",
+    visitBlog: "Visiter Notre Blog",
+    posts: [
+      {
+        title: "L'Avenir de l'IA dans les Entreprises",
+        excerpt: "Découvrez comment l'intelligence artificielle transforme les opérations commerciales et les processus de prise de décision.",
+        date: "15 mars 2024",
+        category: "Technologie"
+      },
+      {
+        title: "Optimisation de l'Infrastructure Cloud",
+        excerpt: "Apprenez les meilleures pratiques pour gérer et optimiser votre infrastructure cloud pour de meilleures performances.",
+        date: "10 mars 2024",
+        category: "Cloud"
+      },
+      {
+        title: "Meilleures Pratiques de Sécurité des Données",
+        excerpt: "Mesures de sécurité essentielles pour protéger vos données d'entreprise dans un monde de plus en plus numérique.",
+        date: "5 mars 2024",
+        category: "Sécurité"
+      }
+    ]
   }
 } 
