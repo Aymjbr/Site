@@ -13,59 +13,53 @@ export const fr = {
   },
   hero: {
     title: "Bienvenue chez OxDev",
-    description: "Transformez vos défis en solutions innovantes.",
-    subtitle: "Chez OxDev, nous mettons notre expertise au service de votre succès. Spécialisés dans le développement informatique, l'analyse de données, l'intelligence artificielle et l'optimisation des processus, nous nous engageons à créer des solutions sur mesure qui répondent parfaitement aux besoins spécifiques de votre entreprise. Grâce à notre approche centrée sur le client, nous vous guidons à travers le paysage technologique en constante évolution, vous permettant ainsi d’atteindre vos objectifs avec efficacité et innovation.",
+    subtitle: "Transformez vos défis en solutions innovantes",
+    description: "Chez OxDev, nous mettons notre expertise au service de votre succès. Spécialisés dans le développement informatique, l'analyse de données, l'intelligence artificielle et l'optimisation des processus, nous nous engageons à créer des solutions sur mesure qui répondent parfaitement aux besoins spécifiques de votre entreprise. Grâce à notre approche centrée sur le client, nous vous guidons à travers le paysage technologique en constante évolution, vous permettant ainsi d'atteindre vos objectifs avec efficacité et innovation.",
     getStarted: "Commencer",
     learnMore: "En Savoir Plus"
   },
   about: {
-    title: "Pourquoi choisir OxDev ?",
-    description: "Notre engagement envers votre succès.",
+    title: "Pourquoi Choisir OxDev ?",
+    description: "Notre Engagement envers Votre Succès",
     values: {
-      expertise : {
+      expertise: {
         title: "Expertise",
-        description: "Une équipe d'experts passionnés et expérimentés."
+        description: "Une équipe d'experts passionnés et expérimentés"
       },
-      personnalisation : {
+      personalization: {
         title: "Personnalisation",
-        description: "Des solutions adaptées à vos besoins spécifiques."
+        description: "Des solutions adaptées à vos besoins spécifiques"
       },
       innovation: {
         title: "Innovation",
-        description: "Intégration des dernières technologies pour des résultats optimaux."
+        description: "Intégration des dernières technologies pour des résultats optimaux"
       },
       customer: {
-        title: "Satisfaction client",
-        description: "Un suivi constant et un support réactif."
+        title: "Satisfaction Client",
+        description: "Support continu et service réactif"
       }
     },
     mission: {
       title: "Notre Mission",
-      description: "Autonomiser les entreprises grâce à des solutions technologiques innovantes, en offrant l'excellence dans le développement de logiciels, l'analyse de données et l'optimisation des processus tout en maintenant les plus hauts standards de qualité et de satisfaction client."
+      description: "Permettre aux entreprises d'exceller grâce à des solutions technologiques innovantes, en offrant l'excellence dans le développement de logiciels, l'analyse de données et l'optimisation des processus tout en maintenant les plus hauts standards de qualité et de satisfaction client."
     }
-  },
-  footer: {
-    description: "Autonomiser les entreprises grâce à des solutions technologiques innovantes.",
-    quickLinks: "Liens Rapides",
-    connect: "Nous Suivre",
-    copyright: "© {year} OxDev. Tous droits réservés."
   },
   services: {
     title: "Nos Services",
     subtitle: "Ce que nous faisons",
-    decription:"Découvrez notre gamme de services conçus pour propulser votre entreprise vers l'avenir :",
+    description: "Découvrez notre gamme de services conçus pour propulser votre entreprise vers l'avenir :",
     software: {
-      title: "Développement informatique",
+      title: "Développement Logiciel",
       description: "Solutions logicielles personnalisées adaptées à vos besoins",
       features: [
         "Applications Web Sur Mesure",
-        "Développement d'Apps Mobiles",
+        "Développement Mobile",
         "Intégration API",
         "Solutions Cloud"
       ]
     },
     data: {
-      title: "Analyse de données",
+      title: "Analyse de Données",
       description: "Transformez vos données en insights actionnables",
       features: [
         "Business Intelligence",
@@ -76,7 +70,7 @@ export const fr = {
     },
     ai: {
       title: "Intelligence Artificielle",
-      description: "Automatisez et innovez avec nos solutions IA.",
+      description: "Solutions intelligentes basées sur le machine learning",
       features: [
         "Modèles de Machine Learning",
         "Traitement du Langage Naturel",
@@ -86,54 +80,12 @@ export const fr = {
     },
     optimization: {
       title: "Optimisation des Processus",
-      description: "Accélérez votre efficacité opérationnelle.",
+      description: "Simplifiez vos opérations pour une efficacité maximale",
       features: [
         "Automatisation des Flux",
         "Optimisation des Ressources",
         "Suivi des Performances",
         "Réduction des Coûts"
-      ]
-    }
-  },
-  approach: {
-    title: "Notre Approche",
-    subtitle: "Une méthodologie systématique qui garantit le succès du projet",
-    steps: {
-      analysis: {
-        title: "Analyse",
-        description: "Comprendre vos besoins et définir des objectifs clairs"
-      },
-      development: {
-        title: "Développement",
-        description: "Développement agile avec feedback continu"
-      },
-      testing: {
-        title: "Tests",
-        description: "Assurance qualité et validation rigoureuse"
-      },
-      deployment: {
-        title: "Déploiement",
-        description: "Déploiement fluide et support continu"
-      }
-    },
-    methodology: {
-      title: "Notre Méthodologie",
-      description: "Nous suivons les meilleures pratiques de l'industrie et les principes agiles pour offrir des résultats exceptionnels.",
-      features: [
-        "Développement Itératif",
-        "Intégration Continue",
-        "Mises à jour Régulières",
-        "Approche Axée sur la Qualité"
-      ]
-    },
-    benefits: {
-      title: "Avantages Clés",
-      description: "Notre approche apporte des avantages tangibles pour votre entreprise :",
-      list: [
-        "Mise sur le Marché Plus Rapide",
-        "Efficacité des Coûts",
-        "Qualité Supérieure",
-        "Meilleure Communication"
       ]
     }
   },
@@ -178,6 +130,12 @@ export const fr = {
       { value: "45%", label: "Réduction Moyenne des Coûts" },
       { value: "24/7", label: "Support Disponible" }
     ]
+  },
+  footer: {
+    description: "Permettre aux entreprises d'exceller grâce à des solutions technologiques innovantes.",
+    quickLinks: "Liens Rapides",
+    connect: "Nous Suivre",
+    copyright: "© {year} OxDev. Tous droits réservés."
   },
   resources: {
     title: "Ressources",
