@@ -1,70 +1,106 @@
+import { useState, useEffect } from 'react'
 import { useLanguage } from '../../context/LanguageContext'
 import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
+import { Button } from '../ui/button'
+
+// Fallback images from the internet
+const fallbackImages = [
+  'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',  // Tech/Data visualization
+  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80',  // Modern office
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',  // Code
+  'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&q=80',  // Tech abstract
+  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80'   // Team working
+]
 
 const Hero = () => {
   const { t, dir } = useLanguage()
   const { theme: currentTheme } = useTheme()
   const isDark = currentTheme === 'dark'
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === fallbackImages.length - 1 ? 0 : prevIndex + 1
+      )
+    }, 10000) // Change image every 10 seconds
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
-    <section 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden w-full"
-      style={{ 
-        background: isDark
-          ? `linear-gradient(135deg, #1a1f35 0%, #0f172a 100%)`
-          : `linear-gradient(135deg, ${theme.colors.primary} 0%, ${theme.colors.accent} 100%)`
-      }}
-      dir={dir}
-    >
-      <div className="section-content py-20 text-center relative z-10">
-        <h1 
-          className="text-4xl md:text-6xl font-bold mb-6 text-white"
-          style={{ fontFamily: theme.fonts.secondary }}
+    <section className="relative h-screen" dir={dir}>
+      {/* Background Images */}
+      {fallbackImages.map((image, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          }`}
         >
-          {t.hero.title}
-        </h1>
-        <p 
-          className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white/90"
-          style={{ fontFamily: theme.fonts.primary }}
-        >
-          {t.hero.subtitle}
-        </p>
-        <p 
-          className="text-ml md:text-xl mb-8 max-w-2xl mx-auto text-white/90"
-          style={{ fontFamily: theme.fonts.primary }}
-        >
-          {t.hero.description}
-        </p>
-        <div className="flex justify-center gap-4">
-          <button className="hero-button-primary">
-            {t.hero.getStarted}
-          </button>
-          <button className="hero-button-learn-more hovered-learn-more">
-            {t.hero.learnMore}
-          </button>
+          <img
+            src={image}
+            alt={`Hero ${index + 1}`}
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+      ))}
+
+      {/* Content */}
+      <div className="relative container mx-auto px-4 h-full flex items-center">
+        <div className="max-w-3xl">
+          <h1 
+            className="text-4xl md:text-6xl font-bold mb-6 text-white"
+            style={{ fontFamily: theme.fonts.secondary }}
+          >
+            {t.hero.title}
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-gray-200">
+            {t.hero.subtitle}
+          </p>
+          <p className="text-lg mb-12 text-gray-300">
+            {t.hero.description}
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Button
+              size="lg"
+              className={`px-8 ${
+                isDark 
+                  ? 'bg-indigo-500 hover:bg-indigo-600' 
+                  : 'bg-primary hover:bg-primary/90'
+              } text-white`}
+            >
+              {t.hero.getStarted}
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="px-8 border-white text-white hover:bg-white hover:text-gray-900"
+            >
+              {t.hero.learnMore}
+            </Button>
+          </div>
+        </div>
+
+        {/* Image indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {fallbackImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? 'bg-white w-4' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
-      
-      {/* Abstract background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className={`absolute w-96 h-96 rounded-full ${
-          isDark ? 'bg-indigo-500' : 'bg-white'
-        } -top-20 -left-20`}></div>
-        <div className={`absolute w-96 h-96 rounded-full ${
-          isDark ? 'bg-indigo-500' : 'bg-white'
-        } -bottom-20 -right-20`}></div>
-      </div>
-
-      {/* Animated gradient overlay */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          background: isDark
-            ? 'radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)'
-            : 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)'
-        }}
-      ></div>
     </section>
   )
 }

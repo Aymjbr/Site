@@ -48,9 +48,7 @@ const Navbar = ({ refs }: NavbarProps) => {
     home: t.nav.home,
     about: t.nav.about,
     services: t.nav.services,
-    approach: t.nav.approach,
     caseStudies: t.nav.caseStudies,
-    resources: t.nav.resources,
     contact: t.nav.contact,
     testimonials: t.nav.testimonials,
     blog: t.nav.blog

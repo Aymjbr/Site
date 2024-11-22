@@ -1,6 +1,8 @@
 import { useLanguage } from '../../context/LanguageContext'
 import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
+import { Link } from 'react-router-dom'
+import { Button } from '../ui/button'
 
 // Import case study images
 import caseStudy1 from '../../assets/images/case-study-1.jpg'
@@ -115,7 +117,7 @@ const CaseStudies = () => {
         </div>
 
         {/* Results Overview */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8 text-center mb-12">
           {t.caseStudies.stats.map((stat, index) => (
             <div 
               key={index}
@@ -134,6 +136,22 @@ const CaseStudies = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center">
+          <Link to="/case-studies">
+            <Button 
+              variant="outline"
+              size="lg"
+              className={`px-8 py-2 ${
+                isDark 
+                  ? 'border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white' 
+                  : 'border-primary text-primary hover:bg-primary hover:text-white'
+              }`}
+            >
+              {t.caseStudies.viewMore}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

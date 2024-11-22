@@ -1,6 +1,8 @@
 import { useLanguage } from '../../context/LanguageContext'
 import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
+import { Link } from 'react-router-dom'
+import { Button } from '../ui/button'
 
 // Import testimonial images
 import testimonial1 from '../../assets/images/testimonial-1.jpg'
@@ -100,6 +102,22 @@ const Testimonials = () => {
               image={testimonialImages[index]}
             />
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link to="/testimonials">
+            <Button 
+              variant="outline"
+              size="lg"
+              className={`px-8 py-2 ${
+                isDark 
+                  ? 'border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white' 
+                  : 'border-primary text-primary hover:bg-primary hover:text-white'
+              }`}
+            >
+              {t.testimonials.viewMore}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

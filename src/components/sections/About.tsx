@@ -1,6 +1,8 @@
 import { useLanguage } from '../../context/LanguageContext'
 import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
+import { Link } from 'react-router-dom'
+import { Button } from '../ui/button'
 
 const About = () => {
   const { t, dir } = useLanguage()
@@ -99,6 +101,23 @@ const About = () => {
           <p className="text-center max-w-2xl mx-auto text-white/90">
             {t.about.mission.description}
           </p>
+        </div>
+
+        {/* Add this after the mission statement */}
+        <div className="text-center mt-12">
+          <Link to="/about">
+            <Button 
+              variant="outline"
+              size="lg"
+              className={`px-8 py-2 ${
+                isDark 
+                  ? 'border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white' 
+                  : 'border-primary text-primary hover:bg-primary hover:text-white'
+              }`}
+            >
+              {t.about.learnMore}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,8 @@
 import { useLanguage } from '../../context/LanguageContext'
 import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
+import { Link } from 'react-router-dom'
+import { Button } from '../ui/button'
 
 const ResourceCard = ({ 
   title, 
@@ -136,6 +138,22 @@ const Resources = () => {
             ? 'bg-gradient-to-r from-transparent via-slate-700 to-transparent'
             : 'bg-gradient-to-r from-transparent via-gray-200 to-transparent'
         }`} />
+
+        <div className="text-center mt-12">
+          <Link to="/resources">
+            <Button 
+              variant="outline"
+              size="lg"
+              className={`px-8 py-2 ${
+                isDark 
+                  ? 'border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white' 
+                  : 'border-primary text-primary hover:bg-primary hover:text-white'
+              }`}
+            >
+              {t.resources.viewAll}
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   )

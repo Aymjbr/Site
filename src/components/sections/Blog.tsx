@@ -2,11 +2,14 @@ import { useLanguage } from '../../context/LanguageContext'
 import { useTheme } from '../../providers/ThemeProvider'
 import theme from '../../config/theme'
 import { Button } from '../ui/button'
+import { Link } from 'react-router-dom'
 
 // Import blog post images
 import blogPost1 from '../../assets/images/blog-1.jpg'
 import blogPost2 from '../../assets/images/blog-2.jpg'
 import blogPost3 from '../../assets/images/blog-3.jpg'
+import blogPost4 from '../../assets/images/blog-4.jpg'
+import blogPost5 from '../../assets/images/blog-5.jpg'
 
 const BlogCard = ({ 
   title, 
@@ -84,7 +87,7 @@ const Blog = () => {
   const isDark = currentTheme === 'dark'
 
   // Array of blog post images
-  const blogImages = [blogPost1, blogPost2, blogPost3]
+  const blogImages = [blogPost1, blogPost2, blogPost3, blogPost4, blogPost5]
 
   return (
     <section className={`py-20 ${
@@ -108,7 +111,7 @@ const Blog = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {t.blog.posts.map((post, index) => (
+          {t.blog.page.recentArticles.articles.map((post, index) => (
             <BlogCard 
               key={index}
               {...post}
@@ -119,17 +122,19 @@ const Blog = () => {
         </div>
 
         <div className="text-center">
-          <Button 
-            variant="outline"
-            size="lg"
-            className={`px-8 py-2 ${
-              isDark 
-                ? 'border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white' 
-                : 'border-primary text-primary hover:bg-primary hover:text-white'
-            }`}
-          >
-            {t.blog.visitBlog}
-          </Button>
+          <Link to="/blog">
+            <Button 
+              variant="outline"
+              size="lg"
+              className={`px-8 py-2 ${
+                isDark 
+                  ? 'border-indigo-400 text-indigo-400 hover:bg-indigo-400 hover:text-white' 
+                  : 'border-primary text-primary hover:bg-primary hover:text-white'
+              }`}
+            >
+              {t.blog.visitBlog}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

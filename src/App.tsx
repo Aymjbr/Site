@@ -1,81 +1,31 @@
-import { useRef } from 'react'
-import { LanguageProvider, useLanguage } from './context/LanguageContext'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { LanguageProvider } from './context/LanguageContext'
 import { ThemeProvider } from './providers/ThemeProvider'
-import Navbar from './components/navigation/Navbar'
-import Hero from './components/sections/Hero'
-import About from './components/sections/About'
-import Services from './components/sections/Services'
-import CaseStudies from './components/sections/CaseStudies'
-import Contact from './components/sections/Contact'
-import Footer from './components/navigation/Footer'
-import theme from './config/theme'
-import Testimonials from './components/sections/Testimonials'
-import Blog from './components/sections/Blog'
-
-function AppContent() {
-  const { dir } = useLanguage()
-  const homeRef = useRef<HTMLDivElement>(null)
-  const servicesRef = useRef<HTMLDivElement>(null)
-  const aboutRef = useRef<HTMLDivElement>(null)
-  const caseStudiesRef = useRef<HTMLDivElement>(null)
-  const contactRef = useRef<HTMLDivElement>(null)
-  const testimonialsRef = useRef<HTMLDivElement>(null)
-  const blogRef = useRef<HTMLDivElement>(null)
-
-  return (
-    <div 
-      style={{ 
-        fontFamily: theme.fonts.primary,
-        direction: dir,
-      }}
-      className={`min-h-screen w-full ${dir === 'rtl' ? 'rtl' : 'ltr'}`}
-    >
-      <Navbar 
-        refs={{
-          home: homeRef,
-          services: servicesRef,
-          about: aboutRef,
-          caseStudies: caseStudiesRef,
-          contact: contactRef,
-          testimonials: testimonialsRef,
-          blog: blogRef
-        }}
-      />
-      
-      <main className="flex flex-col items-center w-full">
-        <div ref={homeRef} className="w-full">
-          <Hero />
-        </div>
-        <div ref={servicesRef} className="w-full">
-          <Services />
-        </div>
-        <div ref={aboutRef} className="w-full">
-          <About />
-        </div>
-        <div ref={caseStudiesRef} className="w-full">
-          <CaseStudies />
-        </div>
-        <div ref={testimonialsRef} className="w-full">
-          <Testimonials />
-        </div>
-        <div ref={blogRef} className="w-full">
-          <Blog />
-        </div>
-        <div ref={contactRef} className="w-full">
-          <Contact />
-        </div>
-      </main>
-
-      <Footer />
-    </div>
-  )
-}
+import HomePage from './pages/HomePage'
+import ServicesPage from './pages/ServicesPage'
+import CaseStudiesPage from './pages/CaseStudiesPage'
+import BlogPage from './pages/BlogPage'
+import ResourcesPage from './pages/ResourcesPage'
+import AboutPage from './pages/AboutPage'
+import TestimonialsPage from './pages/TestimonialsPage'
+import ContactPage from './pages/ContactPage'
 
 function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <AppContent />
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/case-studies" element={<CaseStudiesPage />} />
+            <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </Router>
       </LanguageProvider>
     </ThemeProvider>
   )
