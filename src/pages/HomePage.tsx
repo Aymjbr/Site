@@ -21,8 +21,6 @@ const HomePage = () => {
   const contactRef = useRef<HTMLDivElement>(null)
   const testimonialsRef = useRef<HTMLDivElement>(null)
   const blogRef = useRef<HTMLDivElement>(null)
-  const approachRef = useRef<HTMLDivElement>(null)
-  const resourcesRef = useRef<HTMLDivElement>(null)
 
   return (
     <div 
